@@ -1,0 +1,104 @@
+.quote {
+  background-color: $color-bokara-grey;
+  color: $color-white;
+  @include adaptiveFull('padding-top', 75, 75, 60);
+  @include adaptiveFull('padding-bottom', 60, 60, 40);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(270deg, #D9B568 0.12%, #D9B568 24.8%, #F0DBB4 75.14%, #F0DBB4 98.83%);
+  }
+
+  &--career {
+    .quote__main {
+      @include adaptiveFull('font-size', 36, 24, 20);
+      max-width: 700px;
+    }
+  }
+}
+.quote__subtitle {
+  color: $color-equator;
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 0;
+}
+.quote__main {
+  @include adaptiveFull('font-size', 32, 28, 21);
+  font-weight: 300;
+  line-height: 1.28;
+  max-width: 1020px;
+}
+.quote__person {
+  width: fit-content;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+
+  @include vp-1279 {
+    margin-left: 0;
+  }
+}
+.quote__person-photo {
+  border-radius: 50%;
+  @include adaptiveFull('margin-right', 60, 60, 25);
+  @include adaptiveFull('width', 160, 160, 90);
+}
+.quote__person-text {
+}
+.quote__person-name {
+  @include adaptiveFull('font-size', 20, 18, 16);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.quote__person-position {
+  @include adaptiveFull('font-size', 16, 15, 14);
+  font-weight: 300;
+}
+
+.quote__bottom {
+  display: flex;
+  justify-content: space-between;
+
+  @include vp-1279 {
+    flex-direction: column;
+  }
+}
+.quote__list-wrapper {
+  font-size: 24px;
+  line-height: 34px;
+
+  @include vp-1279 {
+    margin-bottom: 50px;
+  }
+}
+.quote__list-title {
+  font-weight: 500;
+}
+.quote__list {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 300;
+}
+.quote__list-item {
+  @include adaptiveDesktopToMobile('padding-right', 10, 7);
+  @include adaptiveDesktopToMobile('margin-right', 10, 7);
+  margin-bottom: 15px;
+  line-height: 1;
+
+  &:not(:last-child) {
+    border-right: 1px solid #D8B56A;
+  }
+}
+.quote__description {
+  font-weight: 300;
+  max-width: 900px;
+  margin: 0 0 40px;
+}

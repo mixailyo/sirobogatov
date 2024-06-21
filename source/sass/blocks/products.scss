@@ -1,0 +1,94 @@
+.products {
+  @include adaptiveFull('padding-top', 75, 75, 60);
+  position: relative;
+  overflow: hidden;
+    
+  &::before {
+    content: '';
+    position: absolute;
+    @include adaptiveFull('top', 30, 30, 20);
+    @include adaptiveFull('right', 130, 36, 16);
+    @include adaptiveFull('width', 70, 55, 35);
+    @include adaptiveFull('height', 106, 80, 53);
+    background-image: url(../img/content/o-new.svg);
+    background-size: 100% 100%;
+  }
+
+  &--main {
+    .products__title,
+    .products__subtitle,
+    .products__description {
+      text-align: center;
+    }
+
+    .products__title,
+    .products__subtitle {
+      @include animation-text-from-right;
+    }
+
+    .products__description {
+      margin: 0 auto var(--default-margin);
+    }
+
+    .products__controls {
+      justify-content: space-between;
+    }
+
+    @include vp-1023 {
+      .products__title,
+      .products__subtitle,
+      .products__description {
+        text-align: left;
+      }
+    }
+  }
+}
+.products__title {
+  color: $color-equator;
+  margin: 0 0 var(--default-margin);
+
+  @include animation-text-from-left;
+}
+.products__subtitle {
+  color: $color-tundora;
+  margin: 0 0 var(--default-margin);
+
+  @include animation-text-from-left;
+}
+.products__description {
+  color: $color-tundora;
+  max-width: 820px;
+  margin: 0 0 var(--default-margin);
+}
+.products__controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -20px 60px;
+  @include adaptiveFull('margin-left', -20, -10, 0);
+  @include adaptiveFull('margin-right', -20, -10, 0);
+
+  @include vp-1023 {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+.products__control {
+  @include adaptiveFull('margin-left', 20, 10, 0);
+  @include adaptiveFull('margin-right', 20, 10, 0);
+  color: $color-equator;
+  opacity: 0.5;
+  @include adaptiveFull('font-size', 36, 29, 28);
+  width: fit-content;
+
+  &.is-active {
+    opacity: 1;
+  }
+
+  @include vp-1023 {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.products__gallery {
+}

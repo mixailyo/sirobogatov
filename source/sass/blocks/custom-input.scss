@@ -1,0 +1,141 @@
+.custom-input,
+.custom-textarea {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+
+  &--file {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+
+    .custom-input-file-text {
+      padding: 0 10px;
+      line-height: 55px;
+      text-align: left;
+      height: 55px;
+      display: block;
+      float: left;
+      box-sizing: border-box;
+      flex-grow: 1;
+      border-radius: 5px 0px 0 5px;
+      border: 1px solid #D8B56A;
+      font-size: 16px;
+      background: unset;
+      margin-right: -10px;
+      @include adaptiveFull('padding-left', 40, 20, 20);
+      @include adaptiveFull('padding-right', 40, 20, 20);
+      font-size: 16px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .custom-input-file-btn {
+      flex-shrink: 0;
+    }
+
+    input[type=file] {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      display: block;
+      width: 0;
+      height: 0;
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    // @media screen and (max-width: 767px) {
+    //   align-items: flex-start;
+    //   flex-direction: column;
+    // }
+
+    input,
+    textarea {
+      flex-grow: 1;
+      min-height: 55px;
+      padding: 18px 40px;
+      @include adaptiveFull('padding-left', 40, 20, 20);
+      @include adaptiveFull('padding-right', 40, 20, 20);
+      font-size: 16px;
+      background: unset;
+
+      border: 1px solid #D8B56A;
+      border-radius: 5px;
+      outline: none;
+
+      transition: border 0.3s ease;
+
+      @media screen and (max-width: 767px) {
+        max-width: unset;
+        width: 100%;
+      }
+    }
+  }
+
+  &__label {
+    @media screen and (max-width: 767px) {
+      margin: 0 0 18px 0;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+
+    color: #ff1553;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    @media screen and (max-width: 767px) {
+      bottom: 20px;
+    }
+  }
+
+  &.is-invalid {
+    input,
+    textarea {
+      border: 1px solid #ff1553;
+
+      &:focus,
+      &:hover {
+        border: 1px solid rgba(#ff1553, 0.5);
+      }
+    }
+  }
+
+  &.is-valid {
+    input {
+      border: 1px solid #22b259;
+
+      &:focus,
+      &:hover {
+        border: 1px solid rgba(#22b259, 0.5);
+      }
+    }
+  }
+
+  .input-message {
+    position: absolute;
+    left: 0;
+    bottom: -19px;
+    font-size: 16px;
+
+    &.is-invalid {
+      color: #ff0000;
+    }
+
+    &.is-valid {
+      color: #15ab07;
+    }
+  }
+}

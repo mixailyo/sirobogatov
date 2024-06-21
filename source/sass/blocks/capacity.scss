@@ -1,0 +1,65 @@
+.capacity {
+  background-color: $color-bokara-grey;
+  color: $color-white;
+  @include adaptiveFull('padding-top', 50, 50, 40);
+  @include adaptiveFull('padding-bottom', 130, 75, 60);
+
+  &--career {
+    background-color: #57504C;
+    @include adaptiveFull('padding-bottom', 75, 75, 60);
+
+    .capacity__item {
+      @include adaptiveFull('padding-left', 40, 20, 10);
+      @include adaptiveFull('padding-right', 40, 20, 10);
+    }
+    .capacity__item-subtitle {
+      @include adaptiveFull('font-size', 20, 16, 14);
+    }
+  }
+}
+.capacity__title {
+  color: $color-equator;
+  @include adaptiveFull('margin-bottom', 50, 50, 40);
+
+  &:not(:first-child) {
+    @include adaptiveFull('margin-top', 60, 45, 30);
+  }
+}
+.capacity__list {
+  @include reset-list;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include vp-1023 {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+}
+.capacity__item {
+  @include adaptiveFull('padding-top', 10, 10, 10);
+  @include adaptiveFull('padding-bottom', 10, 10, 10);
+  @include adaptiveFull('padding-left', 50, 30, 20);
+  @include adaptiveFull('padding-right', 50, 30, 20);
+  border-left: 1px solid $color-equator;
+
+  &:last-child {
+    border-right: 1px solid $color-equator;
+  }
+
+  @include vp-1023 {
+    &:nth-child(2) {
+      border-right: 1px solid $color-equator;
+    }
+  }
+}
+.capacity__item-subtitle {
+  @include adaptiveFull('font-size', 20, 16, 15);
+}
+.capacity__item-value {
+  @include adaptiveFull('font-size', 78, 48, 35);
+  line-height: 1.2;
+}
+.capacity__item-description {
+  @include adaptiveFull('font-size', 20, 20, 15);
+}

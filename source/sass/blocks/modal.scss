@@ -35,13 +35,13 @@
     display: flex;
     flex-shrink: 0;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     width: 100%;
     min-height: 100%;
-    padding: 60px 40px;
+    // padding: 60px 40px;
 
     @include vp-767 {
-      padding: 60px 16px;
+      // padding: 60px 16px;
     }
   }
 
@@ -59,8 +59,14 @@
   &__content {
     position: relative;
 
-    width: 600px;
-    padding: 40px;
+    @include adaptiveFull('padding-top', 220, 36, 16);
+    @include adaptiveFull('padding-left', 130, 36, 16);
+    @include adaptiveFull('padding-right', 130, 36, 16);
+
+    // top: var(--header-height);
+    // left: 0;
+    width: 100vw;
+    min-height: calc((100 * var(--vh, 1vh)) - var(--header-height));
 
     background-color: $color-default-white;
 
@@ -72,17 +78,34 @@
 
   &__close-btn {
     position: absolute;
-    top: 22px;
-    right: 22px;
+    @include adaptiveDesktopToMobile('top', 65, 20);
+    @include adaptiveDesktopToMobile('right', 100, 15);
     z-index: 1;
 
-    width: 40px;
-    height: 40px;
+    @include adaptiveDesktopToMobile('width', 60, 50);
+    @include adaptiveDesktopToMobile('height', 60, 50);
     padding: 0;
 
     background: $color-transparent;
     border: none;
     cursor: pointer;
+
+    svg {
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    margin: auto 0;
+    max-width: 820px;
+
+    &.form--columns-3 {
+      max-width: 1240px;
+    }
+
+    .form__title {
+      color: #D8B56A;
+    }
   }
 
   &--responsive {

@@ -1,3 +1,5 @@
+@import "mixins";
+
 // Colors
 // ---------------------------------
 
@@ -13,6 +15,13 @@ $color-transparent:                 rgba(255, 255, 255, 0);
 $color-neon-blue:                   #2c39f2;
 $color-torch-red:                   #ff1553;
 
+$color-white:                       #FFFDF8;
+$color-bokara-grey:                 #2C2927;
+$color-tundora:                     #57504C;
+$color-equator:                     #D8B56A;
+$color-wild-sand:                   #ECE9E2;
+$color-merino:                      #E4DFD3;
+
 // Gradient
 
 $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
@@ -21,13 +30,13 @@ $black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0
 // ---------------------------------
 
 // переменная используемая в html для подключения скейлинга
-$fz-default:                        16px;
+$fz-default:                        20px;
 
 // у некоторых шрифтов в ios возникают проблемы с символом рубля
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Placeholder", "Arial", sans-serif;
+$ff-placeholder:                    'Ubuntu', sans-serif;
 
 // Animation
 // ---------------------------------
@@ -48,6 +57,7 @@ $vp-375:                            375px;
 $vp-768:                            768px;
 $vp-1024:                           1024px;
 $vp-1280:                           1280px;
+$vp-1366:                           1366px;
 $vp-1440:                           1440px;
 $vp-1920:                           1920px;
 
@@ -56,3 +66,10 @@ $vp-1920:                           1920px;
 
 $retina-dpi:                        144dpi;
 $retina-dppx:                       1.5dppx;
+
+// Margins
+// ---------------------------------
+
+:root {
+  @include adaptiveFull('--default-margin', 40, 40, 24);
+}

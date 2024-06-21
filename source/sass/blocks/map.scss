@@ -1,0 +1,27 @@
+.map {
+  @include adaptiveFull('padding-top', 90, 80, 60);
+  @include adaptiveFull('padding-bottom', 90, 80, 60);
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    @include vp-1439 {
+      grid-template-columns: auto;
+    }
+  }
+}
+.map__text {
+  max-width: 540px;
+}
+.map__title {
+  color: #57504C;
+  @include adaptiveFull('font-size', 36, 24, 24);
+  font-weight: 500;
+  line-height: 1.4;
+  margin-top: 0;
+}
+.map__description {
+}
+.map__image {
+}

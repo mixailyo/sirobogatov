@@ -11,11 +11,44 @@
 
 @font-face {
   font-style: normal;
-  font-weight: 400;
-  font-family: "";
+  font-weight: 300;
+  font-family: "Ubuntu";
 
   font-display: swap;
   src:
-    url("../fonts/.woff2") format("woff2"),
-    url("../fonts/.woff") format("woff");
+    // url("../fonts/Ubuntu-Light.woff2") format("woff2"),
+    url("../fonts/Ubuntu-Light.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Ubuntu";
+
+  font-display: swap;
+  src:
+    // url("../fonts/Ubuntu-Regular.woff2") format("woff2"),
+    url("../fonts/Ubuntu-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 500;
+  font-family: "Ubuntu";
+
+  font-display: swap;
+  src:
+    // url("../fonts/Ubuntu-Medium.woff2") format("woff2"),
+    url("../fonts/Ubuntu-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Ubuntu";
+
+  font-display: swap;
+  src:
+    // url("../fonts/Ubuntu-Bold.woff2") format("woff2"),
+    url("../fonts/Ubuntu-Bold.woff") format("woff");
 }

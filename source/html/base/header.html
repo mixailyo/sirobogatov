@@ -1,35 +1,55 @@
-<header class="header @@if (context.mod) { header--@@mod }">
-  <div class="container">
-    @@if (!context.index) {
-      <a class="header__logo" href="index.html" aria-label="Переход на главную">
-        Логотип
-      </a>
-    }
-    @@if (context.index) {
-      <span class="header__logo">
-        Логотип
-      </span>
-    }
+@@include("source/html/components/preloader.html")
 
-    <nav class="main-nav">
-      <button class="main-nav__toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false">
-        <svg width="20" height="20" aria-hidden="true">
-          <use xlink:href="#icon-burger"></use>
-        </svg>
+<header class="header">
+  <div class="container">
+    <a href="/" class="header__logo">
+      <img src="img/content/logo.svg" alt="" class="header__logo-img" width="240" height="36">
+    </a>
+    <nav class="header__menu">
+      <button class="header__menu-close">
+        <img src="img/content/close.svg" alt="" class="header__menu-close-icon" width="36" height="36">
       </button>
-      <div class="main-nav__wrapper">
-        <ul class="main-nav__list">
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 0) { is-active }" @@if (context.headerActiveLinkIndex !== 0) { href="#" }>Страница 1</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 1) { is-active }" @@if (context.headerActiveLinkIndex !== 1) { href="#" }>Страница 2</a>
-          </li>
-          <li class="main-nav__item">
-            <a class="main-nav__link @@if (context.headerActiveLinkIndex === 2) { is-active }" @@if (context.headerActiveLinkIndex !== 2) { href="#" }>Страница 3</a>
-          </li>
-        </ul>
-      </div>
+      <ul class="header__menu-list">
+        <li class="header__menu-item header__menu-item--mobile">
+          <img src="img/content/logo.svg" alt="" class="header__menu-logo" width="159">
+        </li>
+        <li class="header__menu-item">
+          <a href="#" class="header__menu-link">О компании</a>
+        </li>
+        <li class="header__menu-item header__menu-item--with-list">
+          <a href="#" class="header__menu-link">Производство</a>
+          <ul class="header__menu-item-list">
+            <li class="header__menu-item-list-item">
+              <a href="#" class="header__menu-item-list-link">Орел</a>
+            </li>
+            <li class="header__menu-item-list-item">
+              <a href="#" class="header__menu-item-list-link">Верхняя Пышма</a>
+            </li>
+          </ul>
+        </li>
+        <li class="header__menu-item">
+          <a href="#" class="header__menu-link">Продукция</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="#" class="header__menu-link">Продажи</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="#" class="header__menu-link">Пресс-центр</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="#" class="header__menu-link">Карьера</a>
+        </li>
+        <li class="header__menu-item header__menu-item--mobile margin-top-auto">
+          <a href="#" class="header__menu-link header__menu-link--primary">+7 (343) 311-00-00</a>
+        </li>
+        <li class="header__menu-item header__menu-item--mobile">
+          <a href="#" class="header__menu-link header__menu-link--primary">office@sirobogatov.ru</a>
+        </li>
+      </ul>
     </nav>
+    <a href="#" class="header__contacts">Контакты</a>
+    <button class="header__hamburger">
+      <img src="img/content/burger.svg" alt="" class="header__hamburger-icon" width="34" height="26">
+    </button>
   </div>
 </header>

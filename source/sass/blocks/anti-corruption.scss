@@ -1,0 +1,20 @@
+.anti-corruption {
+  padding: 60px 0;
+}
+.anti-corruption__link {
+  @include adaptiveFull('margin-bottom', 60, 60, 24);
+}
+.anti-corruption__contacts {
+  @include adaptiveFull('margin-bottom', 60, 60, 24);
+}
+.anti-corruption__phone {
+  color: $color-equator;
+  display: block;
+  @include adaptiveFull('margin-bottom', 20, 20, 14);
+}
+.anti-corruption__email {
+  text-decoration: underline;
+}
+.anti-corruption__form {
+  max-width: 820px;
+}

@@ -1,0 +1,48 @@
+.advantages {
+  background: #2C2927;
+  @include adaptiveFull('padding-top', 90, 80, 60);
+  @include adaptiveFull('padding-bottom', 90, 80, 60);
+  color: #FFFDF8;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(270deg, #D9B568 0.12%, #D9B568 24.8%, #F0DBB4 75.14%, #F0DBB4 98.83%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+.advantages__title {
+  @include adaptiveFull('margin-bottom', 60, 60, 40);
+}
+.advantages__wrapper {
+  display: flex;
+  align-items: center;
+  @include adaptiveFull('margin-bottom', 60, 60, 40);
+}
+.advantages__logo {
+  @include adaptiveFull('margin-right', 30, 30, 20);
+  @include adaptiveFull('width', 91, 91, 70);
+}
+.advantages__description {
+  @include adaptiveFull('max-width', 930, 670, 250);
+  @include adaptiveFull('font-size', 36, 24, 16);
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0;
+}
+.advantages__list-title {
+}
+.advantages__list {
+  padding-left: 20px;
+  @include adaptiveFull('font-size', 24, 20, 16);
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 960px;
+}
+.advantages__item {
+}

@@ -1,0 +1,92 @@
+.employment {
+  @include adaptiveFull('padding-top', 90, 80, 60);
+  @include adaptiveFull('padding-bottom', 90, 80, 60);
+}
+.employment__title {
+  color: #D8B56A;
+  margin: 0;
+  margin-bottom: 40px;
+}
+.employment__wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+
+  @include vp-1023 {
+    grid-template-columns: auto;
+  }
+}
+.employment__slider {
+  @include adaptiveFull('width', 1100, 484, 340);
+  max-width: 100%;
+  min-width: 100%;
+
+  .swiper-pagination {
+    @include adaptiveFull('left', 120, 50, 20);
+    @include adaptiveFull('bottom', 85, 85, 20);
+    width: fit-content;
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #57504C;
+    }
+  }
+  .swiper-navigation {
+    position: absolute;
+    @include adaptiveFull('right', 120, 50, 20);
+    @include adaptiveFull('bottom', 60, 60, 10);
+    z-index: 1;
+  }
+  .swiper-navigation__btn {
+    @include adaptiveFull('width', 60, 60, 40);
+    @include adaptiveFull('height', 60, 60, 40);
+    background-image: url('../img/content/navigation-btn-dark.svg');
+    background-size: cover;
+
+    &.swiper-button-disabled {
+      opacity: 0.5;
+    }
+
+    &--prev {
+      transform: rotate(180deg);
+    } 
+    &--next {
+    }
+  }
+}
+.employment__slide {
+  border-radius: 20px;
+  background: #ECE9E2;
+  @include adaptiveFull('padding-top', 60, 40, 20);
+  @include adaptiveFull('padding-left', 120, 50, 20);
+  @include adaptiveFull('padding-bottom', 150, 150, 60);
+  @include adaptiveFull('padding-right', 120, 50, 20);
+}
+.employment__slide-title {
+  @include adaptiveFull('padding-bottom', 40, 40, 20);
+  border-bottom: 1px solid #D8B56A;
+  @include adaptiveFull('margin-bottom', 40, 40, 20);
+}
+.employment__slide-description {
+}
+.employment__photo {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &--mobile {
+    display: none;
+  }
+
+  @include vp-1023 {
+    &--desktop {
+      display: none;
+    }
+    &--mobile {
+      display: block;
+    }
+    max-height: 400px;
+  }
+}

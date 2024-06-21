@@ -1,13 +1,226 @@
 .header {
-  padding: 28px 0;
+  background-color: rgb(0, 0, 0);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  color: $color-white;
+  font-size: 16px;
+  padding: 10px 0 16px;
 
-  background-color: $color-neon-blue;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(270deg, #D9B568 0.12%, #D9B568 24.8%, #F0DBB4 75.14%, #F0DBB4 98.83%);
+  }
 
   .container {
     display: flex;
+    align-items: center;
+
+    @include vp-1279 {
+      justify-content: space-between;
+    }
+  }
+}
+.header__logo {
+  @include adaptiveDesktopToMobile('width', 240, 138);
+  @include adaptiveDesktopToMobile('margin-bottom', 13, 0);
+}
+.header__logo-img {
+}
+.header__menu {
+  margin-left: auto;
+  @include adaptiveFull('margin-right', 60, 0, 0);
+
+  @include vp-1279 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: $trans-default;
+    display: flex;
+    justify-content: flex-end;
+
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+      background: rgba(0, 0, 0, 0.41);
+      backdrop-filter: blur(7.349999904632568px);
+    }
+  }
+}
+.header__menu-list {
+  @include reset-list;
+
+  display: flex;
+  @include adaptiveFull('margin-left', -20, 0, 0);
+  @include adaptiveFull('margin-right', -20, 0, 0);
+
+  @include vp-1279 {
+    background-color: $color-bokara-grey;
+    flex-direction: column;
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    padding: 60px
+  }
+}
+.header__menu-item {
+  @include adaptiveFull('margin-left', 20, 0, 0);
+  @include adaptiveFull('margin-right', 20, 0, 0);
+
+  &--with-list {
+    position: relative;
+
+    .header__menu-link {
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: url('../img/content/arrow.svg');
+        margin-left: 8px;
+        transform: translateY(-3px);
+      }
+    }
+
+    &:hover {
+      .header__menu-link {
+        &::after {
+          transition: $trans-default;
+          transform: translateY(6px) rotate(180deg);
+        }
+      }
+
+      .header__menu-item-list {
+        opacity: 1;
+        pointer-events: all;
+        display: block;
+      }
+    }
   }
 
-  &__logo {
-    color: $color-default-white;
+  &--mobile {
+    display: none;
   }
+
+  @include vp-1279 {
+    &--mobile {
+      display: block;
+    }
+  }
+}
+.header__menu-logo {
+  margin-bottom: 60px;
+}
+.header__menu-close {
+  display: none;
+
+  @include vp-1279 {
+    display: block;
+    position: absolute;
+    @include adaptiveFull('width', 36, 36, 24);
+    @include adaptiveFull('height', 36, 36, 24);
+    @include adaptiveFull('top', 36, 36, 24);
+    @include adaptiveFull('right', 36, 36, 24);
+  }
+}
+.header__menu-link {
+  display: block;
+  transition: $trans-default;
+
+  @include hover-focus {
+    color: $color-equator;
+  }
+  
+  &--primary {
+    color: $color-equator;
+  }
+
+  @include vp-1279 {
+    padding-bottom: 16px;
+  }
+}
+.header__menu-item-list {
+  padding-top: 10px;
+  @include reset-list;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: $trans-default;
+  transform: translateY(100%);
+
+  @include vp-1279 {
+    position: static;
+    transform: unset;
+    display: none;
+    padding: 0;
+  }
+}
+.header__menu-item-list-item {
+}
+.header__menu-item-list-link {
+  display: block;
+  padding: 12px 20px;
+  background-color: $color-bokara-grey;
+  border-top: 1px solid #363433;
+  white-space: nowrap;
+  transition: $trans-default;
+
+  @include hover-focus {
+    color: $color-equator;
+  } 
+
+  @include vp-1279 {
+    border: unset;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+}
+.header__contacts {
+  padding: 11px 54px;
+  border-radius: 5px;
+  border: 1px solid $color-white;
+  transition: $trans-default;
+
+  @include hover-focus {
+    border: 1px solid $color-equator;
+    background-color: $color-equator;
+    color: #2C2927;
+  }
+
+  @include vp-1279 {
+    display: none;
+  }
+}
+.header__phone {
+  margin-left: auto;
+  margin-right: 50px;
+
+  display: none;
+
+  @include vp-1279 {
+    display: block;
+  }
+}
+.header__phone-icon {
+}
+.header__hamburger {
+  display: none;
+
+  @include vp-1279 {
+    display: block;
+  }
+}
+.header__hamburger-icon {
 }

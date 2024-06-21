@@ -1,0 +1,89 @@
+.main-about {
+  background-color: $color-bokara-grey;
+  color: $color-white;
+  overflow: hidden;
+  position: relative;
+}
+
+.main-about__logo {
+  position: absolute;
+  @include adaptiveFull('bottom', 70, 50, 35);
+  @include adaptiveFull('right', 70, 50, 35);
+  @include adaptiveFull('width', 136, 90, 60);
+}
+.main-about__wrapper {
+  display: flex;
+
+  @include vp-1023 {
+    flex-direction: column;
+  }
+}
+.main-about__text {
+  @include adaptiveFull('padding-top', 75, 50, 35);
+  @include adaptiveFull('padding-bottom', 150, 100, 50);
+  @include adaptiveFull('padding-right', 140, 100, 50);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    @include adaptiveFull('top', 40, 30, 20);
+    @include adaptiveFull('right', 60, 45, 0);
+    @include adaptiveFull('width', 70, 55, 35);
+    @include adaptiveFull('height', 106, 80, 53);
+    background-image: url(../img/content/o-new.svg);
+    background-size: 100% 100%;
+  }
+}
+.main-about__title {
+  color: $color-equator;
+  margin: 0;
+  @include adaptiveFull('margin-bottom', 40, 40, 32);
+  line-height: normal;
+
+  @include animation-text-from-left;
+}
+.main-about__subtitle-wrapper {
+  display: flex;
+  align-items: flex-end;
+  @include adaptiveFull('margin-bottom', 40, 40, 32);
+}
+.main-about__subtitle-decor {
+  @include adaptiveFull('margin-right', 30, 20, 15);
+  @include adaptiveFull('width', 79, 55, 40);
+}
+.main-about__subtitle {
+  margin: 0;
+  line-height: normal;
+  font-weight: 400;
+  @include adaptiveFull('font-size', 36, 28, 24);
+
+  @include animation-text-from-left;
+}
+.main-about__description {
+  margin: 0;
+  @include adaptiveFull('margin-bottom', 40, 40, 32);
+  line-height: 1.7;
+  font-weight: 300;
+}
+.main-about__link {
+}
+.main-about__photo {
+  @include adaptiveFull('--padding', 130, 36, 16);
+  margin-right: calc(-1 * (var(--padding) + (var(--scroll-width) / 2)));
+  width: 50vw;
+  max-width: unset;
+  min-height: 100%;
+  object-fit: cover;
+
+  @include correctWidth;
+
+  // @media screen and (min-width: 1921px) {
+  //   margin-right: calc(-1 * (var(--padding) + (var(--scroll-width) / 2)));
+  // }
+
+  @include vp-1023 {
+    width: 100vw;
+    margin: 0 calc(-1 * var(--padding));
+  }
+}

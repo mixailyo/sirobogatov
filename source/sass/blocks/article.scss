@@ -1,0 +1,80 @@
+.article {
+  position: relative;
+  // @include adaptiveFull('padding-top', 75, 75, 50);
+  overflow: hidden;
+
+  &--with-logo {
+    .article__text {
+      position: relative;
+    
+      &::before {
+        content: '';
+        position: absolute;
+        @include adaptiveFull('top', 30, 30, 20);
+        @include adaptiveFull('right', -90, 0, 0);
+        @include adaptiveFull('width', 70, 55, 35);
+        @include adaptiveFull('height', 106, 80, 53);
+        background-image: url(../img/content/o-new.svg);
+        background-size: 100% 100%;
+      }
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveFull('gap', 150, 20, 32);
+  }
+
+  @include vp-1023 {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+}
+.article__text {
+  color: $color-tundora;
+  @include adaptiveFull('padding-top', 75, 75, 50);
+}
+.article__title {
+  color: $color-equator;
+  margin: 0 0 var(--default-margin);
+
+  @include animation-text-from-left;
+}
+.article__subtitle {
+  margin: 0 0 var(--default-margin);
+
+  @include animation-text-from-left;
+}
+.article__description {
+  margin: 0 0 var(--default-margin);
+  line-height: 1.7
+}
+.article__link {
+  @include adaptiveFull('margin-bottom', 110, 100, 32);
+}
+.article__photo {
+  @include adaptiveFull('--padding', 130, 36, 16);
+  // @include adaptiveFull('padding-top', 100, 100, 0);
+  margin-right: calc(-1 * (var(--padding) + (var(--scroll-width) / 2)));
+  width: 50vw;
+  max-width: unset;
+  // border-radius: 20px 0px 0px 0px;
+  height: 100%;
+  object-fit: cover;
+
+  @include correctWidth;
+
+  // @media screen and (min-width: 1921px) {
+  //   margin-right: calc(-1 * (var(--padding) + (var(--scroll-width) / 2)));
+  // }
+
+  @include vp-1023 {
+    margin-top: 0;
+    width: 100vw;
+    margin: 0 calc(-1 * var(--padding));
+    // border-radius: 20px 20px 0px 0px;
+  }
+}

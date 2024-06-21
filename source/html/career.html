@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  @@include("source/html/base/head.html")
+  <title>Сыробогатов — Карьера</title>
+
+</head>
+<body>
+  <div style="display: none;">
+    @@include("build/img/sprite_auto.svg")
+  </div>
+
+  <div class="wrapper">
+    @@include("source/html/base/header.html")
+
+    <main>
+      @@include("source/html/components/banner-career.html")
+
+      @@include("source/html/components/quote-career.html")
+
+      @@include("source/html/components/map.html")
+
+      @@include("source/html/components/capacity-career.html")
+
+      @@include("source/html/components/vacancies.html")
+      
+      @@include("source/html/components/students.html")
+
+      @@include("source/html/components/employment.html")
+
+      @@include("source/html/components/advantages.html")
+    </main>
+
+    @@include("source/html/base/footer.html")
+
+    @@include("source/html/components/cookie.html")
+
+    @@include("source/html/base/modal.html", {
+      "name": "feedback",
+    })
+
+    @@include("source/html/base/modal.html", {
+      "name": "feedback-more",
+    })
+  </div>
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

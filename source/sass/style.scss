@@ -3,7 +3,7 @@
 
 @import "vendor/normalize";
 // Swiper 7.4.1
-// @import "vendor/swiper";
+@import "vendor/swiper";
 
 // Global
 // ---------------------------------
@@ -15,15 +15,49 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/common";
 
 // Blocks
 // ---------------------------------
 
+@import "blocks/custom-select";
+@import "blocks/custom-input";
+@import "blocks/custom-toggle";
+@import "blocks/toggle-group";
+@import "blocks/data-tabs";
 @import "blocks/header";
 @import "blocks/main-nav";
 @import "blocks/footer";
 @import "blocks/modal";
 @import "blocks/btn";
+@import "blocks/banner";
+@import "blocks/main-about";
+@import "blocks/article";
+@import "blocks/gallery";
+@import "blocks/capacity";
+@import "blocks/products";
+@import "blocks/geography";
+@import "blocks/career";
+@import "blocks/factory";
+@import "blocks/quote";
+@import "blocks/facts";
+@import "blocks/feedback";
+@import "blocks/form";
+@import "blocks/press";
+@import "blocks/publication";
+@import "blocks/contacts";
+@import "blocks/departments";
+@import "blocks/anti-corruption";
+@import "blocks/cookie";
+@import "blocks/years";
+@import "blocks/map";
+@import "blocks/vacancies";
+@import "blocks/employment";
+@import "blocks/advantages";
+@import "blocks/vacancy";
+@import "blocks/header-career";
+@import "blocks/stories";
+@import "blocks/privilege";
 
 // ---------------------------------
 

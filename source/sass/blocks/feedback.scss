@@ -1,0 +1,37 @@
+.feedback {
+  @include adaptiveFull('padding-top', 75, 75, 60);
+  @include adaptiveFull('padding-bottom', 120, 80, 60);
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include vp-1279 {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 40px;
+    }
+  }
+}
+.feedback__text {
+  max-width: 80%;
+
+  @include vp-1023 {
+    max-width: unset;
+  }
+}
+.feedback__title {
+  @include adaptiveFull('margin-bottom', 60, 60, 24);
+}
+.feedback__person {
+}
+.feedback__person-name {
+  font-size: 24px;
+  margin: 0 0 var(--default-margin);
+}
+.feedback__person-contact {
+  display: block;
+  line-height: 1.5;
+}
+.feedback__form {
+  
+}

@@ -1,0 +1,50 @@
+.vacancy {
+  @include adaptiveFull('padding-top', 60, 40, 40);
+  @include adaptiveFull('padding-bottom', 60, 40, 40);
+}
+.vacancy__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @include adaptiveFull('column-gap', 160, 0, 0);
+  @include adaptiveFull('row-gap', 40, 40, 30);
+
+  @include vp-1279 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.vacancy__title {
+  grid-column: span 2;
+  margin: 0;
+
+  @include vp-1279 {
+    grid-column: auto;
+  }
+}
+.vacancy__city {
+  grid-column: span 2;
+  margin: -10px 0;
+  font-weight: 500;
+
+  @include vp-1279 {
+    grid-column: auto;
+  }
+}
+.vacancy__description {
+  margin: 0;
+}
+.vacancy__price {
+  @include adaptiveFull('font-size', 24, 24, 20);
+  font-weight: 500;
+  margin: 0;
+}
+.vacancy__link {
+  width: fit-content;
+  height: fit-content;
+}
+.vacancy__form {
+  @include adaptiveFull('margin-top', 60, 40, 40);
+
+  .form__title {
+    color: #D8B56A;
+  }
+}

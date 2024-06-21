@@ -1,3 +1,129 @@
+$maxWidth: 1920;
+$startWidth: 1920;
+$midWidth: 1024;
+$endWidth: 375;
+
+@mixin adaptiveFull($property, $startSize, $midSize, $endSize) {
+  $addSizeMid: $startSize - $midSize;
+  $addSizeEnd: $midSize - $endSize;
+  #{$property}: $startSize + px;
+  @media (max-width: #{$startWidth + px}) {
+    #{$property}: calc(#{$midSize + px} + #{$addSizeMid} * ((100vw - #{$midWidth + px}) / #{$startWidth - $midWidth}));
+  }
+  @media (max-width: #{$midWidth + px}) {
+    #{$property}: calc(#{$endSize + px} + #{$addSizeEnd} * ((100vw - #{$endWidth + px}) / #{$midWidth - $endWidth}));
+  }
+}
+
+@mixin adaptiveDesktopToMobile($property, $startSize, $endSize) {
+  $addSize: $startSize - $endSize;
+  #{$property}: $startSize + px;
+  @media (max-width: #{$startWidth + px}) {
+    #{$property}: calc(#{$endSize + px} + #{$addSize} * ((100vw - #{$endWidth + px}) / #{$startWidth - $endWidth}));
+  }
+}
+
+@mixin adaptiveLargeDesktopToMobile($property, $startSize, $endSize) {
+  $addSize: $startSize - $endSize;
+  #{$property}: calc(#{$endSize + px} + #{$addSize} * ((#{$maxWidth + px} - #{$endWidth + px}) / #{$startWidth - $endWidth}));
+  @media screen and (max-width: #{$maxWidth + px}) {
+    #{$property}: calc(#{$endSize + px} + #{$addSize} * ((100vw - #{$endWidth + px}) / #{$startWidth - $endWidth}));
+  }
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin media-1 {
+  @media screen and (max-width: 1919px) and (min-width: 1441px) {
+    @content;
+  }
+}
+
+@mixin media-2 {
+  @media screen and (max-width: 1440px) and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-3 {
+  @media screen and (min-width: 1921px) {
+    @content;
+  }
+}
+
+
+@mixin zoomBody {
+  @include media-1 {
+    body {
+      zoom: 0.9;
+    }
+  }
+  @include media-2 {
+    body {
+      zoom: 0.9;
+    }
+  }
+}
+
+@mixin correctWidth {
+  @include media-1 {
+    width: calc(50vw * 1.11);
+  }
+  @include media-2 {
+    width: calc(50vw * 1.11);
+  }
+}
+
+@mixin yearsSideTextCorrect {
+  @include media-1 {
+    @include adaptiveFull('width', 795, 439, 340);
+  }
+  @include media-2 {
+    @include adaptiveFull('width', 840, 439, 340);
+  }
+  @include media-3 {
+    @include adaptiveFull('--padding', 130, 36, 16);
+    width: calc(100vw - 50vw - 130px - 150px - 8px)
+  }
+}
+
+@mixin animation-text {
+  --animation-on-visible: true;
+
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin animation-text-from-left {
+  @include animation-text;
+  transform: translateX(-100%);
+
+  @include vp-1439 {
+    transform: translateX(-80%);
+  }
+}
+
+@mixin animation-text-from-right {
+  @include animation-text;
+  transform: translateX(100%);
+
+  @include vp-1439 {
+    transform: translateX(80%);
+  }
+}
+
+
+
+
 @mixin retina {
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     @content;
@@ -46,6 +172,12 @@
 
 @mixin vp-1439 {
   @media (max-width: ($vp-1440 - 1px)) {
+    @content;
+  }
+}
+
+@mixin vp-1365 {
+  @media (max-width: ($vp-1366 - 1px)) {
     @content;
   }
 }

@@ -1,1 +1,47 @@
-<p class="modal__description">Обычная модалка</p>
+<div class="modal__form form" data-form-validate data-callback="base">
+  <form method="post" novalidate>
+    <h2 class="form__title title-h3 grid-column-2">Хочу у вас работать</h2>
+    <div class="custom-input" data-validate-type="text" data-limitation="name" data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required="">
+      <label>
+        <input type="text" name="user-name-1" class="" placeholder="Фамилия">
+      </label>
+    </div>
+    <div class="custom-input" data-validate-type="text" data-limitation="name" data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required="">
+      <label>
+        <input type="text" name="user-name-2" class="" placeholder="Имя">
+      </label>
+    </div>
+    <div class="custom-input" data-validate-type="email" data-message-base="Поле обязательно к заполнению" data-required="">
+      <label>
+        <input type="email" name="user-email" placeholder="Email">
+      </label>
+    </div>
+    <div class="custom-input" data-validate-type="phone" data-on-input-validate="" data-message-base="Поле обязательно к заполнению" data-message-extra="Проверьте корректность заполнения поля" data-required="" data-phone-length="18">
+      <label>
+        <input type="tel" name="user-phone" placeholder="Телефон">
+      </label>
+    </div>
+    <div class="custom-input custom-input--file" data-validate-type="file">
+      <label>
+        <span class="custom-input-file-text">Прикрепить резюме</span>
+        <input type="file" name="user-file" placeholder="Прикрепить резюме">
+        <span class="custom-input-file-btn">
+          <img src="img/content/file.svg" alt="" />
+        </span>
+      </label>
+    </div>
+    <div class="custom-input" data-validate-type="text" data-message-base="Поле обязательно к заполнению" data-required="">
+      <label>
+        <input type="text" name="message" class="" placeholder="Сообщение">
+      </label>
+    </div>
+    <button class="form__submit btn btn--filled" type="submit">Отправить</button>
+    <div class="form__agreement">Нажимая кнопку, Вы соглашаетесь с нашей <a href="#" target="_blank">политикой обработки персональных данных</a></div>
+  </form>
+  <div class="form__success">
+    <button class="form__success-close">
+      <img src="img/content/close-white.svg" alt="" class="form__success-close-icon" width="15" height="15">
+    </button>
+    <p class="form__success-text title-h4">Ваше сообщение успешно отправлено.</p>
+  </div>
+</div>

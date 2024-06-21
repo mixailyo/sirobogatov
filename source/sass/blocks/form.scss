@@ -1,0 +1,142 @@
+.form {
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @include vp-767 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &--columns-3 {
+    form {
+      grid-template-columns: repeat(3, 1fr);
+  
+      @include vp-1023 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    .grid-column-2 {
+      @include vp-1023 {
+        grid-column: span 1;
+      }
+    }
+  
+    .grid-column-3 {
+      @include vp-1023 {
+        grid-column: span 1;
+      }
+    }
+  }
+
+  &--columns-4 {
+    form {
+      grid-template-columns: repeat(4, 1fr);
+  
+      @include vp-1279 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include vp-767 {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    .grid-column-4 {
+      @include vp-1279 {
+        grid-column: span 2;
+      }
+
+      @include vp-767 {
+        grid-column: span 1;
+      }
+    }
+  }
+
+
+  .custom-input {
+  }
+
+  .grid-column-2 {
+    grid-column: span 2;
+
+    @include vp-767 {
+      grid-column: span 1;
+    }
+  }
+
+  .grid-column-3 {
+    grid-column: span 3;
+
+    @include vp-767 {
+      grid-column: span 1;
+    }
+  }
+
+  .grid-column-4 {
+    grid-column: span 4;
+
+    @include vp-767 {
+      grid-column: span 1;
+    }
+  }
+}
+.form__title {
+  @include adaptiveFull('margin-bottom', 40, 40, 4);
+}
+.form__submit {
+}
+.form__agreement {
+  @include adaptiveFull('font-size', 16, 12, 12);
+  align-self: center;
+
+  a {
+    text-decoration: underline;
+  }
+}
+.form__success {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: calc((100 * var(--vh, 1vh)) - var(--header-height));
+  background-color: $color-white;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $trans-default;
+  opacity: 0;
+  pointer-events: none;
+
+  &.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+.form__success-close {
+  position: absolute;
+  @include adaptiveDesktopToMobile('top', 65, 40);
+  @include adaptiveDesktopToMobile('right', 100, 15);
+  background-color: $color-tundora;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: $trans-default;
+
+  @include hover-focus {
+    background-color: $color-equator;
+  }
+}
+.form__success-close-icon {
+}
+.form__success-text {
+  color: $color-equator;
+  max-width: 92%;
+  text-align: center;
+}

@@ -1,0 +1,46 @@
+body, html {
+  scroll-behavior: smooth;
+}
+
+.title {
+  &-h1 {
+    @include adaptiveFull('font-size', 80, 64, 39);
+    font-weight: 500;
+    margin: 0;
+  }
+  &-h2 {
+    @include adaptiveFull('font-size', 60, 56, 36);
+    font-weight: 500;
+    margin: 0;
+  }
+  &-h3 {
+    @include adaptiveFull('font-size', 48, 28, 28);
+    font-weight: 500;
+    margin: 0;
+  }
+  &-h4 {
+    @include adaptiveFull('font-size', 36, 36, 24);
+    font-weight: 500;
+    margin: 0;
+    line-height: normal;
+  }
+  &-h5 {
+    @include adaptiveFull('font-size', 24, 24, 20);
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+.text {
+  &-norm {
+    @include adaptiveFull('font-size', 20, 18, 16);
+    line-height: 1.7;
+  }
+}
+
+.margin-top-auto {
+  margin-top: auto;
+}
+
+@include zoomBody;
+

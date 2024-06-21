@@ -1,0 +1,58 @@
+<section id="stories" class="stories">
+  <div class="container">
+    <h2 class="stories__title title-h3">Наши истории успеха</h2>
+    <div class="stories__cards">
+      <div class="stories__card" data-open-modal="story-1">
+        <img src="img/content/stories-1.png" alt="" class="stories__card-photo" width="140" height="140">
+        <p class="stories__card-date">01.01.2024</p>
+        <p class="stories__card-description">
+          Здесь цитата специалиста или ключевая фраза из интервью. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </p>
+        <div class="stories__card-bottom">
+          <div class="stories__card-name">Александра Иващенко</div>
+          <div class="stories__card-position">Специалист ГК «Сыробогатов»</div>
+        </div>
+      </div>
+      @@include("source/html/base/modal.html", {
+        "name": "story-1",
+      })
+      <div class="stories__card" data-open-modal="story-2">
+        <img src="img/content/stories-2.png" alt="" class="stories__card-photo" width="140" height="140">
+        <p class="stories__card-date">01.01.2024</p>
+        <p class="stories__card-description">
+          Здесь цитата специалиста или ключевая фраза из интервью. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </p>
+        <div class="stories__card-bottom">
+          <div class="stories__card-name">Александра Иващенко</div>
+          <div class="stories__card-position">Специалист ГК «Сыробогатов»</div>
+        </div>
+      </div>
+      @@include("source/html/base/modal.html", {
+        "name": "story-2",
+      })
+      <div class="stories__card" data-open-modal="story-3">
+        <img src="img/content/stories-3.png" alt="" class="stories__card-photo" width="140" height="140">
+        <p class="stories__card-date">01.01.2024</p>
+        <p class="stories__card-description">
+          Здесь цитата специалиста или ключевая фраза из интервью. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        </p>
+        <div class="stories__card-bottom">
+          <div class="stories__card-name">Александра Иващенко</div>
+          <div class="stories__card-position">Специалист ГК «Сыробогатов»</div>
+        </div>
+      </div>
+      @@include("source/html/base/modal.html", {
+        "name": "story-3",
+      })
+    </div>
+    <div class="stories__pagination">
+      <a href="#" class="stories__pagination-link is-disabled">Назад</a>
+      <a href="#" class="stories__pagination-link is-active">1</a>
+      <a href="#" class="stories__pagination-link">2</a>
+      <a href="#" class="stories__pagination-link">3</a>
+      <div class="stories__pagination-dots">...</div>
+      <a href="#" class="stories__pagination-link">6</a>
+      <a href="#" class="stories__pagination-link">Далее</a>
+    </div>
+  </div>
+</section>

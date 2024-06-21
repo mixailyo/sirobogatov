@@ -1,0 +1,53 @@
+.career {
+  color: $color-tundora;
+}
+.career__banner {
+  @include adaptiveFull('height', 700, 373, 200);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.career__photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.career__banner-title {
+  color: $color-white;
+  @include adaptiveFull('margin-bottom', 100, 40, 16);
+  @include adaptiveFull('max-width', 840, 840, 300);
+  @include adaptiveFull('font-size', 48, 40, 16);
+}
+.career__wrapper {
+  @include adaptiveFull('padding-top', 60, 60, 32);
+  @include adaptiveFull('padding-bottom', 120, 80, 60);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+  }
+}
+.career__title {
+  color: $color-equator;
+
+  @include animation-text-from-left;
+
+  @include vp-1023 {
+    margin: 0 0 var(--default-margin);
+  }
+}
+.career__column {
+}
+.career__description {
+  line-height: 1.7;
+  @include adaptiveFull('font-size', 20, 20, 16);
+  margin: 0 0 var(--default-margin);
+}
+.career__link {
+}
